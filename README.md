@@ -1,247 +1,169 @@
-# EX-06 - Looping
-## AIM:
+EX-06 - Looping
+AIM:
 Write a C program to print even numbers ranging from M to N (including M and N values).
 
-## ALGORITHM:
-1.	Declare two integer variables to store the values of M and N.
-2.	Use the printf function to prompt the user to enter the values of M and N.
-3.	Use the scanf function to read the values of M and N from the user.
-4.	Use a loop (for or while) to iterate from M to N.
-5.	Inside the loop, check if the current number is even.
-6.	If the current number is even, print it.
-7.	Continue the loop until you have iterated through all numbers from M to N.
-
-## PROGRAM:
+ALGORITHM:
+Declare two integer variables to store the values of M and N.
+Use the printf function to prompt the user to enter the values of M and N.
+Use the scanf function to read the values of M and N from the user.
+Use a loop (for or while) to iterate from M to N.
+Inside the loop, check if the current number is even.
+If the current number is even, print it.
+Continue the loop until you have iterated through all numbers from M to N.
+PROGRAM:
 #include <stdio.h>
-
 int main() {
     int M, N, i;
-    printf("Enter the starting value M: ");
+
     scanf("%d", &M);
-    printf("Enter the ending value N: ");
     scanf("%d", &N);
-    printf("Even numbers from %d to %d are:\n", M, N);
     for (i = M; i <= N; i++) {
         if (i % 2 == 0) {
             printf("%d ", i);
         }
     }
+    printf("\n");
     return 0;
 }
+OUTPUT:
+![image](https://github.com/user-attachments/assets/91f08241-18d4-43d6-aae4-22b583e95f58)
 
 
-## OUTPUT:
-Enter the starting value M: 3
-Enter the ending value N: 10
-Even numbers from 3 to 10 are:
-4 6 8 10
-
-## RESULT:
+RESULT:
 Thus the program to print even numbers ranging from M to N (including M and N values) has been executed successfully
- 
- 
 
-
-# EX-07-Nested-loop
-
-## AIM:
-
+EX-07-Nested-loop
+AIM:
 Write a C program to print the given triangular pattern using loop.
 
-## ALGORITHM:
-
-1.	Declare a variable to store the number of rows in the triangle.
-2.	Use the printf function to prompt the user to enter the number of rows.
-3.	Use a loop (for or while) to iterate through each row.
-4.	Inside the loop, use another loop to print the desired number of asterisks for each row.
-5.	Continue the loop until you have printed the entire triangular pattern.
-
-## PROGRAM:
-#include <stdio.h>
-
-int main() {
-    int i, j, rows;
-
-    printf("Enter number of rows: ");
-    scanf("%d", &rows);
-
-    for (i = 1; i <= rows; i++) {
-        for (j = 1; j <= i; j++) {
-            printf("* ");
+ALGORITHM:
+Declare a variable to store the number of rows in the triangle.
+Use the printf function to prompt the user to enter the number of rows.
+Use a loop (for or while) to iterate through each row.
+Inside the loop, use another loop to print the desired number of asterisks for each row.
+Continue the loop until you have printed the entire triangular pattern.
+PROGRAM:
+#include<stdio.h>
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    for (int i=n;i>0;i--){
+        for (int j=0;j<i;j++){
+            printf("*");
         }
         printf("\n");
     }
-
-    return 0;
 }
+OUTPUT:
+![image](https://github.com/user-attachments/assets/8c84cd63-d8c9-4b05-ac6d-545b54683081)
 
 
-## OUTPUT:
-
-Enter number of rows: 5
-* 
-* * 
-* * * 
-* * * * 
-* * * * * 
-
-
-
-
-## RESULT:
-
+RESULT:
 Thus the program to print the given triangular pattern using loop has been executed successfully
- 
- 
 
-
-# EX-08-Functions
-
-## AIM:
-
+EX-08-Functions
+AIM:
 Write a C program to perform addition and subtraction of two numbers using functions (with argument and without return type).
 
-## ALGORITHM:
-
-1.	Declare two functions, one for addition and one for subtraction. Both functions should take two integer arguments.
-2.	Inside the addition & subtraction function, add & subtract the two numbers and print the result.
-3.	In the main function, declare two integer variables and read their values from the user.
-4.	Call the addition and subtraction functions, passing the two numbers as arguments.
-
-## PROGRAM:
+ALGORITHM:
+Declare two functions, one for addition and one for subtraction. Both functions should take two integer arguments.
+Inside the addition & subtraction function, add & subtract the two numbers and print the result.
+In the main function, declare two integer variables and read their values from the user.
+Call the addition and subtraction functions, passing the two numbers as arguments.
+PROGRAM:
 #include <stdio.h>
-
 void add(int a, int b) {
     int sum = a + b;
-    printf("Addition = %d\n", sum);
+    printf("Sum = %d\n", sum);
 }
-
 void subtract(int a, int b) {
-    int diff = a - b;
-    printf("Subtraction = %d\n", diff);
+    int difference = a - b;
+    printf("Difference = %d\n", difference);
 }
-
 int main() {
     int num1, num2;
-    printf("Enter first number: ");
     scanf("%d", &num1);
-    printf("Enter second number: ");
     scanf("%d", &num2);
+
     add(num1, num2);
     subtract(num1, num2);
+
     return 0;
 }
+OUTPUT:
+![image](https://github.com/user-attachments/assets/92d5bfcb-69c5-4300-ac18-a1d5537646f0)
 
 
-## OUTPUT:
-Enter first number: 20
-Enter second number: 5
-Addition = 25
-Subtraction = 15
-
-
-
-
-
-
-## RESULT:
-
+RESULT:
 Thus the program to perform addition and subtraction of two numbers using functions has been executed successfully
- 
- 
 
-
-# EX-09-Use For Loop
-
-## AIM:
-
+EX-09-Use For Loop
+AIM:
 Write a c program to find the sum of odd digits using for loop
 
-## ALGORITHM:
-
-1.	Declare variables to store the input number and the sum of odd digits.
-2.	Initialize the sum of odd digits to 0.
-3.	Use a for loop to iterate through each digit of the input number.
-4.	Inside the loop, extract the rightmost digit of the number (using the modulo operator % and division by 10).
-5.	If the digit is odd, add it to the sum of odd digits.
-6.	Print the sum of odd digits.
-
-## PROGRAM:
+ALGORITHM:
+Declare variables to store the input number and the sum of odd digits.
+Initialize the sum of odd digits to 0.
+Use a for loop to iterate through each digit of the input number.
+Inside the loop, extract the rightmost digit of the number (using the modulo operator % and division by 10).
+If the digit is odd, add it to the sum of odd digits.
+Print the sum of odd digits.
+PROGRAM:
 #include <stdio.h>
 
 int main() {
-    int num, sum = 0, digit;
-
-    printf("Enter a number: ");
+    int num, digit, sum = 0, i;
     scanf("%d", &num);
+    for (i = num; i > 0; i = i / 10) {
+        digit = i % 10; 
 
-    for (; num != 0; num /= 10) {
-        digit = num % 10;
-        if (digit % 2 != 0) {
+        if (digit % 2 != 0) { 
             sum += digit;
         }
     }
-
     printf("Sum of odd digits = %d\n", sum);
     return 0;
 }
-
-## OUTPUT:
-
-Enter a number: 123456
-Sum of odd digits = 9
+OUTPUT:
+![image](https://github.com/user-attachments/assets/67e60d90-b9d4-4f9c-8fee-36b2b42f9855)
 
 
-
-## RESULT:
-
+RESULT:
 Thus the program to find the sum of odd digits using for loop has been executed successfully.
 
-
-
-
-# EX – 10 - Factorial of a Number Using a Function
-## AIM:
+EX – 10 - Factorial of a Number Using a Function
+AIM:
 To write a C program that calculates the factorial of a given number using a user-defined function.
-## ALGORITHM:
-1.	Start
-2.	Declare the function fact().
-3.	In the main() function, call the fact() function.
-4.	In fact() function:
-a.	Declare variables i, N, and fact (initialized to 1).
-b.	Read an integer N from the user.
-c.	Use a for loop from 1 to N:
-i.	Multiply fact by i in each iteration.
-d.	After the loop, print the factorial value.
-5.	End
 
-## PROGRAM:
+ALGORITHM:
+Start
+Declare the function fact().
+In the main() function, call the fact() function.
+In fact() function: a. Declare variables i, N, and fact (initialized to 1). b. Read an integer N from the user. c. Use a for loop from 1 to N: i. Multiply fact by i in each iteration. d. After the loop, print the factorial value.
+End
+PROGRAM:
 #include <stdio.h>
 
-int factorial(int n) {
-    int fact = 1;
-    for (int i = 1; i <= n; i++) {
+int factorial() 
+{
+    int n, fact = 1;
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i++)
+    {
         fact *= i;
     }
+    
     return fact;
 }
 
 int main() {
-    int num;
-
-    printf("Enter a number: ");
-    scanf("%d", &num);
-
-    printf("Factorial of %d = %d\n", num, factorial(num));
-    
+    printf("Factorial value is: %d\n", factorial());
     return 0;
 }
+OUTPUT:
+![image](https://github.com/user-attachments/assets/eb8351d8-7b90-4ea4-8bd0-12644261a2e0)
 
 
-## OUTPUT:
-Enter a number: 5
-Factorial of 5 = 120
-
-## RESULT:
+RESULT:
 The program correctly computes the factorial of a given number using a separate function and displays the result.
- 
